@@ -1,0 +1,128 @@
+/* Global overrides for shadcn components */
+:root {
+  --background: 0 0% 0%;
+  --foreground: 210 40% 98%;
+  --card: 0 0% 3%;
+  --card-foreground: 210 40% 98%;
+  --popover: 0 0% 3%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 217.2 91.2% 59.8%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 224.3 76.3% 48%;
+}
+
+/* Main form container */
+.payment-form {
+  @apply space-y-8;
+}
+
+/* Card override */
+.payment-form-card {
+  @apply bg-black/40 backdrop-blur-md border-gray-800/30 
+         shadow-xl hover:shadow-blue-900/10 
+         transition-all duration-300;
+
+  animation: cardGlow 4s ease-in-out infinite;
+}
+
+/* Form grid layout */
+.form-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+}
+
+/* Form groups */
+.form-group {
+  @apply space-y-2;
+}
+
+.form-group label {
+  @apply text-sm font-medium text-gray-300;
+}
+
+/* Input overrides */
+.payment-form :where(input, select) {
+  @apply bg-black/50 border-gray-800/30 
+         text-gray-200 placeholder-gray-600 
+         focus:border-blue-900/50 focus:ring-2 
+         focus:ring-blue-900/30 
+         transition-all duration-200;
+}
+
+/* Milestones section header */
+.milestones-section {
+  @apply space-y-4 mt-8;
+}
+
+.milestone-header {
+  @apply flex items-center justify-between mb-4;
+}
+
+.milestone-header label {
+  @apply text-sm font-medium text-gray-300;
+}
+
+/* Button overrides */
+.payment-form :where(button) {
+  @apply transition-all duration-200;
+}
+
+/* Add milestone button override */
+.payment-form button[variant="outline"] {
+  @apply bg-blue-900/20 hover:bg-blue-800/30 
+         text-blue-400 border-blue-900/50 
+         hover:border-blue-800 
+         transition-all duration-200;
+}
+
+/* Submit button override */
+.submit-button {
+  @apply w-full bg-gradient-to-r from-blue-900 to-blue-800 
+         hover:from-blue-800 hover:to-blue-700 
+         text-gray-200 font-medium 
+         relative overflow-hidden 
+         hover:shadow-lg hover:shadow-blue-900/20 
+         hover:scale-[1.02] 
+         transition-all duration-300;
+}
+
+/* Submit button shine effect */
+.submit-button::after {
+  content: '';
+  @apply absolute inset-0 
+         bg-gradient-to-r from-transparent via-blue-500/10 to-transparent 
+         translate-x-[-100%] 
+         transition-transform duration-1000;
+}
+
+.submit-button:hover::after {
+  @apply translate-x-[100%];
+}
+
+/* Animations */
+@keyframes cardGlow {
+  0%, 100% { @apply shadow-blue-900/5; }
+  50% { @apply shadow-blue-800/10; }
+}
+
+/* Dark theme background for the page */
+body {
+  @apply bg-gradient-to-b from-gray-900 via-black to-gray-900;
+}
+
+/* NetworkSelect component override */
+.network-select {
+  @apply bg-black/50 border-gray-800/30 
+         text-gray-200 
+         focus:border-blue-900/50 focus:ring-blue-900/30;
+}
+
+/* TokenSelect component override */
+.token-select {
+  @apply bg-black/50 border-gray-800/30 
+         text-gray-200 
+         focus:border-blue-900/50 focus:ring-blue-900/30;
+}

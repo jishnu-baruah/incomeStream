@@ -1,0 +1,89 @@
+.milestones-container {
+    @apply space-y-4;
+}
+
+.milestone-step {
+    @apply flex items-center gap-4;
+}
+
+.step-indicator {
+    @apply w-8 h-8 rounded-full flex items-center justify-center border-2 border-gray-700 bg-gray-900 transition-all duration-200;
+}
+
+.step-completed {
+    @apply border-green-500 bg-green-500/10 text-green-500;
+}
+
+.step-current {
+    @apply border-blue-500 bg-blue-500/10 text-blue-500;
+}
+
+.step-pending {
+    @apply border-gray-700 bg-gray-900 text-gray-400;
+}
+
+.milestone-content {
+    @apply flex-1 space-y-1;
+}
+
+.milestone-date {
+    @apply text-sm text-gray-400;
+}
+
+.milestone-progress {
+    @apply mt-2 h-2 rounded-full bg-gray-800 overflow-hidden;
+}
+
+.progress-bar {
+    @apply h-full bg-blue-600 transition-all duration-300;
+}
+
+/* Shared Animations */
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-slide-up {
+    animation: slide-up 0.3s ease-out forwards;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .form-grid {
+        @apply grid-cols-1;
+    }
+
+    .payment-details {
+        @apply grid-cols-1;
+    }
+
+    .stats-container {
+        @apply grid-cols-1;
+    }
+}

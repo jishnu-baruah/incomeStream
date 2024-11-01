@@ -1,0 +1,23 @@
+.history-container {
+    @apply space-y-6;
+}
+
+.history-header {
+    @apply flex items-center justify-between mb-6;
+}
+
+.history-table {
+    @apply w-full border-collapse;
+}
+
+.table-header {
+    @apply bg-gray-900/70 text-left font-medium text-gray-300 p-4;
+}
+
+.table-row {
+    @apply border-t border-gray-800 hover:bg-gray-900/50 transition-colors;
+}
+
+.table-cell {
+    @apply p-4 text-sm;
+}

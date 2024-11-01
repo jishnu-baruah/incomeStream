@@ -1,0 +1,175 @@
+/* src/styles/DashboardPage.css */
+.dashboard-container {
+    @apply min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white p-6;
+}
+
+/* Header Styles */
+.dashboard-header {
+    @apply flex justify-between items-center mb-8;
+}
+
+.dashboard-title {
+    @apply text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-300;
+}
+
+.dashboard-subtitle {
+    @apply text-gray-400 mt-2;
+}
+
+.dashboard-actions {
+    @apply flex gap-4;
+}
+
+/* Main Content Area */
+.content-area {
+    @apply mt-8;
+}
+
+/* Form Card Styling */
+.form-card {
+    @apply bg-gray-900/50 border border-gray-800 rounded-xl p-6 backdrop-blur-sm transition-all duration-300;
+}
+
+.form-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+}
+
+.form-group {
+    @apply space-y-2;
+}
+
+/* Input Styling */
+.input-container {
+    @apply relative;
+}
+
+.input-field {
+    @apply w-full bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-200;
+}
+
+/* Button Styling */
+.btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-all duration-200 flex items-center gap-2;
+}
+
+.btn-secondary {
+    @apply border border-gray-700 hover:border-blue-500 text-gray-300 hover:text-white px-4 py-2 rounded-lg transition-all duration-200 flex items-center gap-2;
+}
+
+/* Milestone Section */
+.milestone-section {
+    @apply space-y-4 mt-6;
+}
+
+.milestone-card {
+    @apply border border-gray-800 rounded-lg p-4 backdrop-blur-sm transition-all duration-200 hover:border-blue-500/50;
+}
+
+/* Active Payments Table */
+.payments-table {
+    @apply w-full border-collapse;
+}
+
+.table-header {
+    @apply bg-gray-900/70 text-left font-medium text-gray-300 p-4;
+}
+
+.table-cell {
+    @apply border-t border-gray-800 p-4;
+}
+
+/* Animations */
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 15s ease infinite;
+}
+
+/* Status Badges */
+.status-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.status-active {
+    @apply bg-green-500/10 text-green-500;
+}
+
+.status-pending {
+    @apply bg-yellow-500/10 text-yellow-500;
+}
+
+.status-completed {
+    @apply bg-blue-500/10 text-blue-500;
+}
+
+/* Loading States */
+.loading-overlay {
+    @apply absolute inset-0 bg-gray-900/50 backdrop-blur-sm flex items-center justify-center;
+}
+
+.loading-spinner {
+    @apply animate-spin text-blue-500;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .dashboard-header {
+        @apply flex-col items-start gap-4;
+    }
+
+    .dashboard-actions {
+        @apply w-full justify-start;
+    }
+
+    .form-grid {
+        @apply grid-cols-1;
+    }
+}
+
+/* Glass Effect Utilities */
+.glass-effect {
+    @apply bg-gray-900/50 backdrop-blur-sm border border-gray-800;
+}
+
+.glass-effect-hover {
+    @apply hover:bg-gray-900/70 transition-all duration-200;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar {
+    @apply scrollbar-thin scrollbar-thumb-gray-800 scrollbar-track-gray-900;
+}
+
+/* Tooltip Styling */
+.tooltip {
+    @apply absolute z-10 px-2 py-1 text-xs bg-gray-900 text-white rounded shadow-lg;
+}
+
+/* Charts and Graphs Area */
+.chart-container {
+    @apply p-4 rounded-xl border border-gray-800 bg-gray-900/50 backdrop-blur-sm;
+}
+
+/* Activity Feed */
+.activity-feed {
+    @apply space-y-4 mt-6;
+}
+
+.activity-item {
+    @apply flex items-start gap-4 p-4 rounded-lg border border-gray-800 bg-gray-900/50;
+}
+
+.activity-icon {
+    @apply flex-shrink-0 w-8 h-8 rounded-full bg-blue-500/10 text-blue-500 flex items-center justify-center;
+}

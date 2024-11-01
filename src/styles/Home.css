@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-color: #3b82f6;
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --accent-color: #60a5fa;
+    --transition-speed: 0.3s;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom right, #000000, #111827, #000000);
+    color: var(--text-color);
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to bottom right, rgb(0, 0, 0), rgb(17, 24, 39), rgb(0, 0, 0));
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.home.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.content {
+    z-index: 1;
+    text-align: center;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background: rgba(17, 24, 39, 0.5);
+    backdrop-filter: blur-sm;
+    border: 1px solid rgba(55, 65, 81, 0.3);
+    border-radius: 1rem;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 300ms ease-out, visibility 300ms ease-out;
+    will-change: opacity, visibility;
+}
+
+.content.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.content:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.1);
+}
+
+.title {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+}
+
+.title span {
+    background: linear-gradient(to right, #3b82f6, #60a5fa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+}
+
+.animate-text {
+    display: inline-block;
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(100%);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(156, 163, 175);
+}
+
+.subtitle .animate-text {
+    margin: 0.2rem 0;
+}
+
+.cta-button {
+    background: linear-gradient(to right, #3b82f6, #60a5fa);
+    color: var(--text-color);
+    border: none;
+    border-radius: 30px;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    margin: 10px;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent);
+    transition: all 0.6s;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3);
+    background: linear-gradient(to right, #2563eb, #3b82f6);
+}
+
+.cta-button svg {
+    margin-left: 0.5rem;
+    transition: transform var(--transition-speed) ease;
+}
+
+.cta-button:hover svg {
+    transform: translateX(5px);
+}
+
+.address {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+    color: rgb(156, 163, 175);
+}
+
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(96, 165, 250, 0.15) 0%, transparent 50%);
+    background-size: 200% 200%;
+    animation: gradient 15s ease infinite;
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.background-animation::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)"/></svg>');
+    opacity: 0.02;
+    pointer-events: none;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animate .animate-text {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+.animate .title .animate-text:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.animate .title .animate-text:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.animate .title .animate-text:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.animate .subtitle .animate-text:nth-child(1) {
+    transition-delay: 0.4s;
+}
+
+.animate .subtitle .animate-text:nth-child(2) {
+    transition-delay: 0.5s;
+}
+
+.animate .cta-button {
+    transition-delay: 0.6s;
+}
+
+/* Glass Effect */
+.glass-effect {
+    background: rgba(17, 24, 39, 0.5);
+    backdrop-filter: blur-sm;
+    border: 1px solid rgba(55, 65, 81, 0.3);
+    transition: all var(--transition-speed) ease;
+}
+
+.glass-effect:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.1);
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+
+    .dot {
+        font-size: 3.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .cta-button {
+        font-size: 1rem;
+        padding: 0.8rem 2rem;
+    }
+}

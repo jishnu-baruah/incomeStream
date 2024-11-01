@@ -1,0 +1,243 @@
+/* PaymentStats.css */
+
+/* Base Container Styles */
+.stats-container {
+  @apply w-full py-4 animate-fade-in;
+}
+
+/* Card Base Styles */
+.stats-card {
+  @apply relative overflow-hidden 
+    bg-black/40 
+    border border-gray-800/50
+    backdrop-blur-sm 
+    rounded-xl
+    transition-all duration-300 
+    hover:border-blue-500/30;
+}
+
+/* Gradient Backgrounds */
+.bg-gradient-dark {
+  @apply bg-gradient-to-br from-gray-900 via-black to-gray-900;
+}
+
+.bg-gradient-glow {
+  @apply bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-blue-500/10;
+}
+
+/* Text Styles */
+.stats-title {
+  @apply text-gray-400 text-sm font-medium;
+}
+
+.stats-value {
+  @apply text-2xl font-bold 
+    bg-gradient-to-r from-blue-400 to-purple-400 
+    bg-clip-text text-transparent
+    transition-all duration-300;
+}
+
+.stats-description {
+  @apply text-sm text-gray-500 
+    transition-colors duration-300;
+}
+
+/* Trend Indicators */
+.trend-positive {
+  @apply text-green-500 font-medium;
+}
+
+.trend-negative {
+  @apply text-red-500 font-medium;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    border-color: rgba(59, 130, 246, 0.1);
+  }
+  50% {
+    border-color: rgba(59, 130, 246, 0.3);
+  }
+}
+
+/* Animation Classes */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-glow {
+  animation: glowPulse 3s infinite;
+}
+
+.animate-border {
+  animation: borderGlow 4s infinite;
+}
+
+/* Hover Effects */
+.hover-glow {
+  @apply transition-all duration-300;
+}
+
+.hover-glow:hover {
+  @apply shadow-lg shadow-blue-500/10;
+}
+
+/* Glass Effect */
+.glass-effect {
+  @apply backdrop-blur-sm 
+    bg-opacity-20 
+    border border-gray-800/50
+    hover:bg-opacity-30
+    transition-all duration-300;
+}
+
+/* Gradient Borders */
+.gradient-border {
+  @apply relative;
+}
+
+.gradient-border::after {
+  content: '';
+  @apply absolute bottom-0 left-0 right-0 h-px
+    bg-gradient-to-r from-transparent via-blue-500/20 to-transparent;
+}
+
+/* Icon Styles */
+.stats-icon {
+  @apply w-8 h-8 
+    rounded-full 
+    flex items-center justify-center
+    bg-blue-500/10 text-blue-400
+    transition-colors duration-300;
+}
+
+.stats-icon:hover {
+  @apply bg-blue-500/20 text-blue-300;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .stats-value {
+    @apply text-xl;
+  }
+  
+  .stats-description {
+    @apply text-xs;
+  }
+  
+  .stats-icon {
+    @apply w-6 h-6;
+  }
+}
+
+/* Dark Mode Optimization */
+.dark .stats-card {
+  @apply bg-black/60 border-gray-800/30;
+}
+
+.dark .stats-title {
+  @apply text-gray-400;
+}
+
+.dark .stats-description {
+  @apply text-gray-500;
+}
+
+/* Loading State */
+.stats-loading {
+  @apply animate-pulse bg-gray-800/50;
+}
+
+/* Tooltip Styles */
+.stats-tooltip {
+  @apply absolute z-10 
+    px-2 py-1 
+    text-xs 
+    bg-gray-900 
+    text-gray-100 
+    rounded 
+    shadow-lg 
+    backdrop-blur-sm
+    border border-gray-700/50;
+}
+
+/* Status Indicators */
+.status-indicator {
+  @apply inline-flex items-center px-2 py-0.5 
+    rounded-full text-xs font-medium;
+}
+
+.status-active {
+  @apply bg-green-500/10 text-green-400;
+}
+
+.status-pending {
+  @apply bg-yellow-500/10 text-yellow-400;
+}
+
+.status-inactive {
+  @apply bg-gray-500/10 text-gray-400;
+}
+
+/* Custom Scrollbar for Overflow Content */
+.custom-scrollbar {
+  @apply scrollbar-thin 
+    scrollbar-thumb-gray-700 
+    scrollbar-track-gray-900/50;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  @apply w-1.5;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-gray-900/50 rounded-full;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-gray-700 rounded-full
+    hover:bg-gray-600
+    transition-colors duration-200;
+}
+
+/* Shimmer Effect for Loading States */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.03) 8%,
+    rgba(255, 255, 255, 0.07) 18%,
+    rgba(255, 255, 255, 0.03) 33%
+  );
+  background-size: 1000px 100%;
+}

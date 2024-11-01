@@ -1,0 +1,55 @@
+/* Notification.css */
+
+.notification {
+    flex: 1;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    color: #ffffff;
+}
+
+.notification h4 {
+    display: flex;
+    align-items: center;
+    color: #4a90e2;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.notification h4 svg {
+    margin-right: 0.5rem;
+}
+
+.notification ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.notification li {
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.notification li svg {
+    margin-right: 0.5rem;
+    color: #4a90e2;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.notification {
+    animation: fadeIn 0.5s ease-out;
+}
